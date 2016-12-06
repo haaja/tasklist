@@ -4,20 +4,22 @@
   </div>
 </form>
 
-<div class="task-list">
-  <div *ngFor="let task of tasks">
-    <div class="col-xs-1">
-      <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
+<div class="well">
+  <div class="task-list">
+    <div id="todo-list" *ngFor="let task of tasks">
+      <div class="col-xs-1">
+	<input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
+      </div>
+      <div class="col-xs-10">
+	{{ task.title }}
+      </div>
+      <div class="col-xs-1">
+	<!--<input type="button" value="Delete" class="btn btn-danger">-->
+	<button type="button" (click)="deleteTask(task._id)"t class="btn btn-danger">
+	  <span class="glyphicon glyphicon-trash"></span>
+	</button>
+      </div>
+      <br><br>
     </div>
-    <div class="col-xs-10">
-      {{ task.title }}
-    </div>
-    <div class="col-xs-1">
-      <!--<input type="button" value="Delete" class="btn btn-danger">-->
-      <button type="button" (click)="deleteTask(task._id)"t class="btn btn-danger">
-	<span class="glyphicon glyphicon-trash"></span>
-      </button>
-    </div>
-    <br><br>
   </div>
 </div>
