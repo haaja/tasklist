@@ -1,7 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://mytasklist:rommikola123@ds113958.mlab.com:13958/mytasklist');
+
+var mongoUser = process.env.MONGO_USERNAME;
+var mongoPass = process.env.MONGO_PASSWORD;
+var mongoHost = process.env.MONGO_HOST;
+
+// Simple validation for credentials
+if (!mongoUser || !mongoPass || !mongoHost) {
+    console.log("ERROR: No mongodb credentials set!");
+    process.exit(9);
+}
+
+
+var db = mongojs('mongodb://'
+		 + mongoUser + ':'+ mongoPass + '@' + mongoHost);
 
 
 //Get All tasks
