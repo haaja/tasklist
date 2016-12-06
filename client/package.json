@@ -1,6 +1,6 @@
 {
-  "name": "mytasklist",
-  "version": "1.0.0",
+  "name": "tasklist",
+  "version": "0.0.1",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
