@@ -12,9 +12,8 @@ if (!mongoUser || !mongoPass || !mongoHost) {
     process.exit(9);
 }
 
-
-var db = mongojs('mongodb://'
-		 + mongoUser + ':'+ mongoPass + '@' + mongoHost);
+var db = mongojs('mongodb://' + mongoUser + ':'
+		 + mongoPass + '@' + mongoHost);
 
 
 //Get All tasks
