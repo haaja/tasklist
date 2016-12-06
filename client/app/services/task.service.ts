@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map';
 export class TaskService {
 
     constructor(private http:Http) {
-	console.log('Task Service Initialized...');
     }
 
 
